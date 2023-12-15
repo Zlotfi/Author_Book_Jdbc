@@ -5,6 +5,7 @@ import model.Book;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class BookRepository {
@@ -23,5 +24,23 @@ public class BookRepository {
         preparedStatement.setString(3,book.getAuthor_name());
         int result = preparedStatement.executeUpdate();
         return result;
+    }
+
+    public Book load(int id) throws SQLException {
+        String query = "SELECT * FROM book WHERE id = ?";
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setInt(1,id);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        if (resultSet.next()){
+            Book book = new Book(
+                    resultSet.getInt("id"),
+                    resultSet.getString("title"),
+                    resultSet.getString("print_year"),
+                    resultSet.getString("author_name")
+            );
+            return book;
+        }
+        else
+            return null;
     }
 }
