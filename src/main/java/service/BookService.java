@@ -29,4 +29,12 @@ public class BookService {
         Book book = bookRepository.load(book_id);
         return book;
     }
+
+    public void delete(int id) throws SQLException {
+        int result = bookRepository.delete(id);
+        if (result != 0)
+            System.out.println("successfully deleted from database");
+        else
+            System.out.println("Oops :(");
+    }
 }
