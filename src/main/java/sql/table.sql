@@ -5,3 +5,10 @@ CREATE TABLE IF NOT EXISTS author(
     age INT NOT NULL,
     bookList CHAR(36) NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS book(
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(50) NOT NULL,
+    print_year VARCHAR(50) NOT NULL,
+    author_name VARCHAR(50) NOT NULL
+);
