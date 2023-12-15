@@ -4,8 +4,11 @@ import model.Author;
 import repository.AuthorRepository;
 
 import java.sql.SQLException;
+import java.util.Scanner;
 
 public class AuthorService {
+
+    Scanner scanner = new Scanner(System.in);
 
     private final AuthorRepository authorRepository = new AuthorRepository();
 
@@ -18,5 +21,12 @@ public class AuthorService {
             System.out.println(author.getFirstName() + " " + author.getLastName() + " successfully added to database");
         else
             System.out.println("ERROR 404");
+    }
+
+    public void load(int id) throws SQLException {
+        System.out.println("Author_id: ");
+        int author_id = scanner.nextInt();
+        Author author = authorRepository.load(author_id);
+        System.out.println(author);
     }
 }
