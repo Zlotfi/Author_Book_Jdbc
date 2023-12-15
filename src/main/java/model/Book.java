@@ -1,23 +1,23 @@
 package model;
 
 public class Book {
-    private int id;
+    private Integer id;
     private String title;
     private String print_year;
     private String author_name;
 
-    public Book(int id, String title, String print_year, String author_name) {
+    public Book(Integer id, String title, String print_year, String author_name) {
         this.id = id;
         this.title = title;
         this.print_year = print_year;
         this.author_name = author_name;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
