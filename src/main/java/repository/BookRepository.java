@@ -38,6 +38,7 @@ public class BookRepository {
                     resultSet.getString("print_year"),
                     resultSet.getString("author_name")
             );
+            System.out.println(book);
             return book;
         }
         else
