@@ -23,7 +23,7 @@ public class BookService {
             System.out.println("ERROR 404");
     }
 
-    public Book load(int id) throws SQLException {
+    public Book load() throws SQLException {
         System.out.println("book_id: ");
         int book_id = scanner.nextInt();
         Book book = bookRepository.load(book_id);
