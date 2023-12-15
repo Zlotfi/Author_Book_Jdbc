@@ -3,13 +3,13 @@ package model;
 import java.util.Arrays;
 
 public class Author {
-    private int id;
+    private Integer id;
     private String firstName;
     private String lastName;
     private int age;
     private String[] bookList;
 
-    public Author(int id, String firstName, String lastName, int age, String[] bookList) {
+    public Author(Integer id, String firstName, String lastName, int age, String[] bookList) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -20,11 +20,11 @@ public class Author {
     public Author() {
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
